@@ -1,0 +1,62 @@
+/* reverse list style */
+.reverse-list {
+	/* reverse block style */
+	.reverse-block {
+		flex-direction: row;
+
+		@include media('>=tablet') {
+			display: flex;
+			align-items: center;
+		}
+
+		&:nth-child(odd) {
+			@include media('>=tablet') {
+				flex-direction: row-reverse;
+			}
+
+			.image-holder {
+				@include media('>=tablet') {
+					margin: 0 -15px 0 15px;
+				}
+
+				@include media('>=desktop') {
+					margin: 0 -48px 0 15px;
+				}
+			}
+		}
+
+		&:nth-child(even) {
+			.image-holder {
+				@include media('>=tablet') {
+					margin: 0 15px 0 -15px;
+				}
+
+				@include media('>=desktop') {
+					margin: 0 15px 0 -48px;
+				}
+			}
+		}
+	}
+
+	.text-holder {
+		padding: 0 0 40px;
+
+		@include media('>=tablet') {
+			width: 50%;
+			padding: 0;
+			padding: 0 15px;
+		}
+	}
+
+	.image-holder {
+		flex: 1 0;
+
+		@include media('<tablet') {
+			margin: 0 -15px 20px;
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+}

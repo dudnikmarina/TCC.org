@@ -1,0 +1,120 @@
+/* intro section style*/
+.intro-section {
+	@include bg-styles;
+	padding: 60px 0;
+
+	@include media('>=tablet') {
+		padding: 90px 0;
+	}
+
+	.btn {
+		font-size: 16px;
+		font-weight: 500;
+
+		@include media('>=tablet') {
+			font-size: 20px;
+		}
+	}
+
+	.dash {
+		padding: 0 2px 0 7px;
+	}
+
+	.categories-list {
+		text-transform: uppercase;
+		letter-spacing: 1.8px;
+	}
+
+	h1 {
+		font-weight: 700;
+	}
+}
+
+/* intro columns style */
+.intro-columns {
+	align-items: center;
+
+	@include media('>=tablet') {
+		display: flex;
+		margin: 0 -15px;
+	}
+
+	.intro-text,
+	.intro-image {
+		@include media('>=tablet') {
+			width: 50%;
+			padding: 0 15px;
+		}
+	}
+
+	.intro-text {
+		@include media('<tablet') {
+			margin: 0 0 45px;
+		}
+	}
+
+	.intro-image {
+		text-align: center;
+	}
+}
+
+/* intro text style */
+.intro-text {
+	max-width: 500px;
+	font-size: 16px;
+	letter-spacing: -0.33px;
+
+	@include media('>=tablet') {
+		width: 50%;
+		font-size: 20px;
+	}
+
+	h1 {
+		@include media('<tablet') {
+			font-size: 38px;
+			line-height: 1.15;
+			margin: 0 0 4rem;
+		}
+	}
+
+	&.intro-text-md {
+		max-width: 650px;
+
+		@include media('>=tablet') {
+			width: auto;
+		}
+	}
+
+	&.intro-text-lg {
+		max-width: 650px;
+		font-size: 18px;
+
+		@include media('>=tablet') {
+			width: auto;
+			font-size: 25px;
+		}
+
+		@include media('>=desktop') {
+			font-size: 28px;
+			line-height: 1.28;
+		}
+
+		h1 {
+			font-size: 36px;
+			letter-spacing: .4px;
+
+			@include media('<tablet') {
+				margin: 0;
+			}
+
+			@include media('>=tablet') {
+				font-size: 50px;
+				margin: 0 0 1.2rem;
+			}
+
+			@include media('>=desktop') {
+				font-size: 64px;
+			}
+		}
+	}
+}

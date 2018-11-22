@@ -1,0 +1,64 @@
+/* contact box style */
+.contact-box {
+	width: 100%;
+	background: $white;
+	box-shadow: -1px -3px 4px rgba(0, 0, 0, 0.05), 1px -3px 4px rgba(0, 0, 0, 0.08);
+	border-radius: 5px;
+	padding: 20px;
+	margin: -60px 0 20px;
+
+	@include media('<tablet') {
+		font-size: 14px;
+	}
+
+	@include media('>=tablet') {
+		margin: -213px 0 40px;
+	}
+
+	.btn-holder {
+		@include media('>=tablet') {
+			text-align: right;
+		}
+	}
+
+	.btn {
+		@include media('<tablet') {
+			display: block;
+		}
+	}
+
+	label {
+		font-size: 16px;
+		float: left;
+		margin: 0 10px 0 0;
+	}
+
+	.hs-error-msgs {
+		@extend %listreset;
+		color: #818d9c;
+
+		label {
+			font-size: 12px;
+			float: none;
+			margin: 0;
+		}
+	}
+}
+
+.hs-form-field {
+	margin: 0 0 15px;
+
+	input[type='text'],
+	input[type='tel'],
+	input[type='email'],
+	input[type='search'],
+	input[type='password'],
+	textarea {
+		max-width: none;
+		margin: 0;
+	}
+}
+
+.hs_error_rollup {
+	margin: -14px 0 15px;
+}

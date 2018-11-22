@@ -1,0 +1,23 @@
+/* categories list style */
+.categories-list {
+	@extend %listreset;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -8px 15px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #626d78;
+
+	li {
+		margin: 0 8px;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}

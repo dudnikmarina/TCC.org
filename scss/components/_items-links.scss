@@ -1,0 +1,40 @@
+/* items links style */
+.items-links {
+	@extend %listreset;
+	display: flex;
+	flex-wrap: wrap;
+
+	li {
+		position: relative;
+		padding: 0 6px 0 0;
+		margin: 0 6px 0 0;
+
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+
+		&:after {
+			position: absolute;
+			content: '';
+			width: 2px;
+			height: 2px;
+			border-radius: 50%;
+			right: 0;
+			top: 11px;
+			background: #818d9c;
+		}
+	}
+
+	a {
+		font-size: 14px;
+		color: #818d9c;
+		text-decoration: none;
+
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}

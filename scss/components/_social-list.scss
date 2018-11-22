@@ -1,0 +1,28 @@
+/* social list style */
+.social-list {
+	@extend %listreset;
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	font-size: 20px;
+	margin: 0 -5px;
+
+	li {
+		margin: 0 5px;
+
+		&.active {
+			a {
+				color: $primary;
+			}
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}

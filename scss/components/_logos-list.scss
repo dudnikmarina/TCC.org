@@ -1,0 +1,33 @@
+/* logos list style */
+.logos-list {
+	@extend %listreset;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	@include media('<phone') {
+		img {
+			max-width: 75%;
+		}
+	}
+
+	li {
+		padding: 0 10px 27px;
+
+		@include media('>=phone') {
+			padding: 0 21px 27px;
+		}
+	}
+
+	a {
+		display: inline-block;
+		vertical-align: top;
+		text-decoration: none;
+		text-align: center;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+}

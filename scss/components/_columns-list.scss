@@ -1,0 +1,38 @@
+/* columns list style */
+.columns-list {
+	@extend %listreset;
+	padding: 0 0 23px;
+
+	li {
+		margin: 0 0 4px;
+
+		@include media('>=phone') {
+			break-inside: avoid;
+			page-break-inside: avoid;
+		}
+	}
+
+	@include media('>=phone') {
+		column-count: 2;
+	}
+
+	a {
+		margin: 0;
+
+	}
+
+	.link-arrow {
+		&.link-arrow-lg {
+			@include media('<tablet') {
+				font-size: 14px;
+			}
+
+			&:after {
+				@include media('<tablet') {
+					font-size: 17px;
+					bottom: 0;
+				}
+			}
+		}
+	}
+}

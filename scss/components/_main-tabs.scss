@@ -1,0 +1,90 @@
+/* main tabs styles*/
+.main-tabs {
+	.tabset {
+		@extend %listreset;
+		display: flex;
+		margin: 0 -8px;
+
+		@include media('>=tablet') {
+			margin: 0 -20px 22px;
+		}
+
+		li {
+			margin: 0 7px 10px;
+
+			@include media('>=tablet') {
+				margin: 0 20px 10px;
+			}
+		}
+
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			font-size: 16px;
+			line-height: 1.2;
+			font-weight: 700;
+			color: $black;
+			text-decoration: none;
+			letter-spacing: -0.5px;
+			padding: 0 0 8px;
+
+			@include media('>=phone') {
+				font-size: 24px;
+			}
+
+			&.active {
+				&:after {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+
+			&:after {
+				@include animate(color background border opacity);
+				position: absolute;
+				content: '';
+				height: 3px;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background: $black;
+				opacity: 0;
+				visibility: hidden;
+
+				@include media('>=tablet') {
+					background: $primary;
+				}
+			}
+
+			&:hover {
+				&:after {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		display: flex;
+		flex-direction: row;
+
+	/* 	@include media('>=phone') {
+		min-height: 255px;
+	}
+
+	@include media('>=tablet') {
+		min-height: 190px;
+		} */
+	}
+
+	.tab {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		min-height: 300px;
+		width: 100%;
+	}
+}

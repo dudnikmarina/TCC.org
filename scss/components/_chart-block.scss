@@ -1,0 +1,79 @@
+/* chart block styles */
+.chart-block {
+	position: relative;
+	font-weight: 500;
+	z-index: 1;
+
+	@include media('<tablet') {
+		font-size: 14px;
+	}
+
+	@include media('>=tablet') {
+		min-height: 150px;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 25px;
+		bottom: -13px;
+		left: 0;
+		right: 0;
+		background: url(images/img-02-sm.png) no-repeat;
+		background-position: bottom;
+		z-index: -1;
+
+		@include media('>=tablet') {
+			top: -20px;
+			bottom: -25px;
+			background: url(images/img-02.png) no-repeat 100% 100%;
+		}
+
+		@include media('>=tablet') {
+			top: -85px;
+		}
+	}
+
+	.four-columns {
+		display: flex;
+		margin: 0 -10px 8px;
+
+		@include media('<tablet') {
+			flex-wrap: wrap;
+			margin: 0 -10px 15px;
+		}
+	}
+
+	.column {
+		width: 50%;
+		padding: 0 10px 15px;
+
+		@include media('>=tablet') {
+			width: 25%;
+			padding: 0 10px;
+		}
+	}
+
+	h2 {
+		margin: 0;
+		font-size: 36px;
+
+		@include media('>=tablet') {
+			font-size: 32px;
+		}
+
+		@include media('>=desktop') {
+			font-size: 38px;
+		}
+	}
+
+	time {
+		display: block;
+		text-align: right;
+		padding: 0 0 5px;
+
+		@include media('>=tablet') {
+			padding: 0;
+		}
+	}
+}

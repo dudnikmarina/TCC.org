@@ -1,0 +1,40 @@
+/* posts list style */
+.posts-list {
+	font-size: 16px;
+	margin: 0 -15px 23px;
+
+	@include media('>=tablet') {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px 10px;
+	}
+
+	.post {
+		@include media('>=tablet') {
+			width: 50%;
+		}
+
+		&:only-child {
+			@include media('>=tablet') {
+				width: 100% ;
+			}
+		}
+	}
+}
+
+.post {
+	padding: 0 15px 12px;
+
+	h2 {
+		font-weight: 700;
+		word-wrap: break-word;
+
+		@include media('<tablet') {
+			font-size: 24px;
+		}
+	}
+
+	p {
+		margin: 0 0 5px;
+	}
+}

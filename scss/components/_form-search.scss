@@ -1,0 +1,39 @@
+/* form search style */
+.form-search {
+	position: relative;
+
+	.button-holder {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	input[type='submit'] {
+		background: 0;
+		border: 0;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		text-indent: -9999px;
+	}
+
+	input[type='search'] {
+		border-radius: 2px;
+		box-shadow: none;
+		padding-left: 40px;
+		background: $white;
+	}
+
+	&:after {
+		@include icon-icomoon($content: "\e901", $font-size: 20px);
+		position: absolute;
+		color: lighten($black, 16%);
+		left: 8px;
+		top: 9px;
+
+		@include media('>=tablet') {
+			top: 11px;
+			font-size: 25px;
+		}
+	}
+}

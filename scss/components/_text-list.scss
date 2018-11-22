@@ -1,0 +1,19 @@
+/* text list style */
+
+.text-list {
+	@extend %listreset;
+	color: lighten($dark-gray, 12%);
+	letter-spacing: normal;
+
+	@include media('>=tablet') {
+		font-size: 18px;
+	}
+
+	li {
+		margin: 0 0 17px;
+	}
+
+	a {
+		color: inherit;
+	}
+}

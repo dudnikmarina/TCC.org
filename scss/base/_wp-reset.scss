@@ -1,0 +1,428 @@
+// #main {
+// 	@extend %clearfix;
+// }
+
+// #content {
+// 	float: left;
+// 	width: 70%;
+// 	&:only-child{
+// 		float:none;
+// 		width:100%;
+// 	}
+// }
+
+// #sidebar {
+// 	float: right;
+// 	width: 25%;
+// 	#wp-calendar {
+// 		width:100%;
+// 	}
+// }
+
+#content {
+	padding: 40px 0;
+}
+.widget {
+	margin-bottom: $vertical-rhythm;
+	@extend %clearfix;
+	ul {
+		padding-left: 2em;
+	}
+	select {
+		min-width: 150px;
+	}
+}
+
+table {
+	width: 100%;
+}
+
+.comment-form {
+	label {
+		display: block;
+		padding-bottom: 4px;
+	}
+	textarea {
+		overflow: auto;
+		margin: 0;
+		height: 120px;
+		min-height: 120px;
+	}
+	textarea,
+	input[type='text'] {
+		margin: 0 4px 0 0;
+		max-width: 300px;
+		width:100%;
+	}
+	input[type='submit'] {
+		display: block;
+		float: none;
+	}
+}
+
+.post-password-form {
+	label {
+		display: block;
+		margin-bottom:4px;
+	}
+	input[type='password'] {
+		margin: 0 4px 0 0;
+		max-width: 300px;
+		width:100%;
+	}
+}
+
+.search-form {
+	@extend %clearfix;
+	margin-bottom:15px;
+	input {
+		height: 48px;
+		&[type='search'] {
+			margin: 0 4px 15px 0;
+			width: 100%;
+			max-width: 300px;
+		}
+	}
+}
+
+.post-password-form {
+	p {
+		@extend %clearfix;
+		margin:0 0 15px;
+	}
+	input {
+		height: 48px;
+		&[type='password'] {
+			width: 100%;
+			max-width: 300px;
+		}
+	}
+}
+
+.comment-form,
+.post-password-form,
+.search-form {
+	input[type='submit'] {
+		@include animate(color background border);
+		padding: 6px 20px;
+		background: $btn-background;
+		color: $btn-color;
+		height: 48px;
+		border: none;
+		width: 100%;
+
+		&:hover {
+			color: $secondary;
+			background: darken($gray, 12%);
+			border-color: darken($gray, 12%);
+		}
+	}
+}
+
+.hs_submit {
+	text-align: right !important;
+}
+
+legend{
+	display: inline-block !important;
+	width: auto !important;
+	font-size: 14px;
+	font-weight: 400;
+	color: #818d9c;
+	padding: 2px 0 0;
+}
+
+.actions {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	max-width: 300px;
+	margin: 0 0 1.1rem;
+
+	&:hover {
+		input {
+			color: $secondary;
+			background: darken($gray, 12%);
+			border-color: darken($gray, 12%);
+		}
+
+		&:after {
+			color: $secondary;
+		}
+	}
+
+	&:after {
+		@include animate(color);
+		@include icon-icomoon($font-size: 18px);
+		@include center-content-v;
+		color: $white;
+		right: 25px;
+		font-weight: normal;
+		pointer-events: none;
+
+		@include media('>=tablet') {
+			font-size: 23px;
+		}
+	}
+
+	input[type='submit'] {
+		text-align: left;
+		padding-right: 50px;
+	}
+}
+
+input[type='submit'] {
+	margin: 0;
+}
+
+.commentlist {
+	margin: 0 0 $vertical-rhythm;
+	.edit-link {
+		margin: 0;
+	}
+	.avatar-holder {
+		float: left;
+		margin: 0 $vertical-rhythm 4px 0;
+	}
+}
+
+.commentlist-item {
+	.commentlist-item {
+		padding: 0;
+		@include media(">=tablet") {
+			padding: 0 0 0 2em;
+		}
+	}
+}
+
+.comment,
+.commentlist-holder {
+	overflow: hidden;
+}
+
+.comment-form {
+	p {
+		margin: 0 0 15px;
+	}
+}
+
+.commentlist-item .commentlist-item,
+.commentlist-item + .commentlist-item {
+	padding-top: $vertical-rhythm;
+}
+
+.widget_calendar {
+	#next {
+		text-align: right;
+	}
+}
+
+.gallery-item {
+	dt {
+		float: none;
+		padding: 0;
+	}
+}
+
+.navigation,
+.navigation-comments {
+	position: relative;
+	font-size: 18px;
+	font-weight: 600;
+	vertical-align: middle;
+	margin-bottom: $vertical-rhythm;
+
+	.screen-reader-text {
+		position: absolute;
+		left: -99999px;
+	}
+
+	.page-numbers {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 .4em;
+		@include media('<tablet') {
+			padding:0 3px;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	.next,
+	.prev {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		max-width: 48%;
+		background: $btn-color;
+		color: $btn-background;
+		border-radius: 30px;
+		padding: .4em;
+		text-decoration: none;
+		@include media('<tablet') {
+			padding:.2em;
+		}
+
+		&:hover{
+			color: $primary;
+		}
+	}
+}
+
+.pagination {
+	.prev,
+	.next {
+		&:after {
+			@include icon-icomoon($font-size: 20px);
+			position: absolute;
+			top: 3px;
+
+			@include media('>=tablet') {
+				font-size: 22px;
+				top: 8px;
+			}
+		}
+	}
+
+	.next {
+		padding: 0 25px 0 0;
+
+		&:after {
+			right: 0;
+		}
+	}
+
+	.prev {
+		padding: 0 0 0 25px;
+
+		&:after {
+			@include icon-icomoon($content: "\e905", $font-size: 22px);
+			left: 0;
+		}
+	}
+}
+
+.navigation-single{
+	@extend %clearfix;
+	margin-bottom: $vertical-rhythm;
+	font-weight: 600;
+	.next,
+	.prev {
+		position: relative;
+		float: left;
+		vertical-align: middle;
+		max-width: 48%;
+		background: $btn-color;
+		color: $btn-background;
+		text-decoration: none;
+
+		&:after {
+			@include icon-icomoon($font-size: 18px);
+			position: absolute;
+			top: 7px;
+
+			@include media('>=tablet') {
+				top: 13px;
+			}
+		}
+
+		&:hover{
+			color: $primary;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			padding: .4em;
+			display: block;
+			@include media('<tablet') {
+				padding:.2em;
+			}
+
+		}
+	}
+	.next {
+		float: right;
+		padding: 0 25px 0 0;
+
+		&:after {
+			right: 0;
+		}
+	}
+
+	.prev {
+		padding: 0 0 0 25px;
+
+		&:after {
+			@include icon-icomoon($content: "\e905", $font-size: 18px);
+			left: 0;
+		}
+	}
+}
+
+.wp-caption {
+	max-width: 100%;
+	clear: both;
+	border: 1px solid $gray;
+	padding: .4em;
+	margin-bottom: $vertical-rhythm;
+	img {
+		margin: 0;
+		vertical-align: top;
+	}
+	p {
+		margin: .4em 0 0;
+	}
+}
+
+div.aligncenter {
+	margin: 0 auto $vertical-rhythm;
+}
+
+img.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 $vertical-rhythm 4px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 4px $vertical-rhythm;
+}
+
+.mejs-container {
+	margin-bottom: $vertical-rhythm;
+}
+
+.wp-caption-text,
+.gallery,
+.alignnone,
+.gallery-caption,
+.sticky,
+.bypostauthor {
+	height: auto;
+}
+
+iframe {
+	@include media("<desktop") {
+		width:100%;
+	}
+}
+
+#wp-calendar {
+	tbody {
+		td {
+			text-align:center;
+		}
+	}
+	td,
+	th {
+		border:1px solid $gray;
+	}
+}

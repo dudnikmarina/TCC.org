@@ -1,0 +1,65 @@
+/* partners list style */
+
+.partners-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -5px 25px;
+
+	@include media('>=tablet') {
+		margin: 0 -15px 45px;
+	}
+}
+
+/* partners box  style */
+.partners-box {
+	display: block;
+	width: 50%;
+	font-size: 14px;
+	padding: 5px 5px 15px;
+	text-decoration: none;
+
+	@include media('>=tablet') {
+		font-size: 16px;
+	}
+
+	@include media('>=tablet') {
+		padding: 15px;
+		width: 25%;
+	}
+
+	&:hover {
+		opacity: .7;
+	}
+
+	h2 {
+		font-weight: 700;
+
+		@include media('<tablet') {
+			font-size: 18px;
+		}
+	}
+
+	p {
+		&:last-child {
+			margin: 0;
+		}
+	}
+
+	.logo-holder {
+		min-height: 90px;
+		line-height: 90px;
+		text-align: center;
+		margin: 0 0 5px;
+
+		@include media('>=phone') {
+		min-height: 150px;
+		line-height: 150px;
+		}
+
+		img {
+			width: 70%;
+			vertical-align: middle;
+		}
+	}
+}
+

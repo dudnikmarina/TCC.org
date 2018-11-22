@@ -1,0 +1,18 @@
+/* map holder style */
+.map-holder {
+	height: 195px;
+	overflow: hidden;
+	filter: grayscale(100%);
+
+	@include media('>=phone') {
+		height: 565px;
+	}
+
+	@include media('>=tablet') {
+		margin: 0 0 40px;
+	}
+
+	iframe {
+		filter: grayscale(100%);
+	}
+}

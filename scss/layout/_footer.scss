@@ -1,0 +1,96 @@
+//footer
+#footer {
+	font-size: 12px;
+	letter-spacing: -0.2px;
+	padding: 22px 0 37px;
+
+	@include media('>=desktop') {
+		padding: 33px 0 37px;
+		border-top: 1px solid darken($light-gray, 5%);
+	}
+
+	.social-list {
+		margin-left: 20px;
+	}
+}
+
+.title-footer {
+	display: block;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0;
+
+	@include media('>=tablet') {
+		margin: 0 0 .5rem;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+.items-footer {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -5px;
+
+	@include media('>=phone') {
+		margin: 0 -12px;
+	}
+
+	@include media('>=tablet') {
+		padding: 0 0 12px;
+	}
+}
+
+.item {
+	width: 50%;
+	padding: 0 5px 32px;
+
+	@include media('>=phone') {
+		width: 33.3%;
+		padding: 0 12px 32px;
+	}
+
+	@include media('>=tablet') {
+		width: 16.66%;
+	}
+}
+
+.footer-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	color: darken($gray, 43%);
+	border-top: 2px solid $light-gray;
+	padding: 30px 0 0;
+}
+
+.navigation-footer {
+	@extend %listreset;
+
+	li {
+		margin: 0 0 9px;
+
+		&.active {
+			a {
+				color: $primary;
+			}
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+

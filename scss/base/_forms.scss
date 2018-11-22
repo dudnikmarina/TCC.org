@@ -1,0 +1,106 @@
+// forms
+form,
+fieldset {
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+//input[type='url'],
+// input[type='date'],
+textarea {
+	display: block;
+	font: 16px/1.4 $base-font-family;
+	border: 1px solid $form-element-border-color;
+	padding: $form-element-padding;
+	letter-spacing: 0.75px;
+	width: 100%;
+	max-width: 565px;
+	height: 40px;
+	margin: 0 0 15px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
+	background-color: #fafafa;
+	appearance: none;
+	outline: none;
+
+	@include media('>=tablet') {
+		font-size: 18px;
+		height: 47px;
+	}
+
+	&:focus {
+		border-color: $form-element-focus-border-color;
+		border-width: 2px;
+	}
+
+	@include placeholder {
+		color: $placeholder-color;
+	}
+}
+
+select {
+	border-radius: 5px;
+}
+
+label {
+	font-weight: 500;
+}
+
+.hs-field-desc {
+	font-size: 14px;
+	color: #818d9c;
+}
+
+textarea {
+	width: 100% !important;
+	min-height: 165px !important;
+	vertical-align: top;
+	resize: vertical;
+}
+
+input[type='button'],
+input[type='reset'],
+input[type='file'],
+input[type='submit'],
+button[type='submit'] {
+	@include animate(background);
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	max-width: 300px;
+	height: 48px;
+	font: 600 18px/1.5 $base-font-family;
+	border: none;
+	margin: 0 0 15px;
+	padding: 6px 19px;
+	background: $btn-background;
+	color: $btn-color;
+	border-radius: 30px;
+	outline: none;
+	appearance: none;
+	text-align: center;
+	letter-spacing: 1px;
+
+	&:hover {
+		background: darken($btn-background, 10%);
+	}
+}
+
+input[type='button'],
+input[type='submit'],
+button[type='submit'] {
+	@include media('<tablet') {
+		font-size: 14px;
+	}
+}
+
+
+
+

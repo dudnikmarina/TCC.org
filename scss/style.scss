@@ -1,0 +1,95 @@
+/*
+Theme Name: TCC
+Author: Anonymous
+Author URI:
+Version: 1
+Description: Base theme for Wordpress
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: base
+Tags: one-column, two-columns
+Theme URI:
+*/
+
+$breakpoints: (
+    'xs-phone': 320px,
+    'phone': 480px,
+    'lg-phone': 550px,
+    'xs-tablet': 700px,
+    'tablet': 850px,
+    'desktop': 992px,
+    'widescreen': 1150px
+);
+
+// keywords
+$media-expressions: (
+    'screen': 'screen',
+    'print': 'print',
+    'handheld': 'handheld',
+    'landscape': '(orientation: landscape)',
+    'portrait': '(orientation: portrait)',
+    'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+    'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+@import 'vendors/include-media';
+@import 'vendors/normalize';
+@import 'vendors/fonts';
+@import 'vendors/icomoon';
+@import 'vendors/slick';
+@import 'vendors/js-tab-hidden';
+
+@import 'base/variables';
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/reset';
+@import 'base/cms-reset';
+@import 'base/forms';
+@import 'base/wp-reset';
+@import 'base/typography';
+
+@import 'layout/common';
+@import 'layout/header';
+
+@import 'components/buttons';
+@import 'components/pagination';
+@import 'components/form-search';
+@import 'components/accordion-main';
+@import 'components/gallery-section';
+@import 'components/slider-secondary';
+@import 'components/map-holder';
+@import 'components/card';
+@import 'components/cards-grid';
+@import 'components/holder-list';
+@import 'components/count-list';
+@import 'components/text-list';
+@import 'components/columns-list';
+@import 'components/main-block';
+@import 'components/main-tabs';
+@import 'components/cards-list';
+@import 'components/social-list';
+@import 'components/links-list';
+@import 'components/logos-list';
+@import 'components/stack-list';
+@import 'components/items-links';
+@import 'components/reverse-list';
+@import 'components/partners-list';
+@import 'components/posts-list';
+@import 'components/filters-block';
+@import 'components/content-block';
+@import 'components/desc-block';
+@import 'components/intro-section';
+@import 'components/banner-section';
+@import 'components/chart-block';
+@import 'components/quote-block';
+@import 'components/info-block';
+@import 'components/contact-box';
+@import 'components/more-block';
+@import 'components/blog-section';
+@import 'components/categories-list';
+
+@import 'layout/footer';
+

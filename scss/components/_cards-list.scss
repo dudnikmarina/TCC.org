@@ -1,0 +1,30 @@
+/* cards list style */
+.cards-list {
+	.card {
+		font-size: 14px;
+		line-height: 1.6;
+
+		@include media('>=tablet') {
+			display: flex;
+		}
+
+		&:last-child {
+			padding: 0;
+		}
+	}
+
+	h3 {
+		@include media('<tablet') {
+			font-size: 18px;
+			margin: 0 0 3px;
+		}
+	}
+
+	.card-heading {
+		text-align: left;
+
+		@include media('>=tablet') {
+			padding: 5px 15px 0 0;
+		}
+	}
+}

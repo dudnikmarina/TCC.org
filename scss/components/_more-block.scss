@@ -1,0 +1,24 @@
+/* more block style */
+.more-block {
+	@include media('<tablet') {
+		display: none;
+	}
+
+	.title-block{
+		@include media('>=tablet') {
+			min-height: 90px;
+		}
+	}
+}
+
+.more-holder {
+	padding: 40px 0 15px;
+
+	@include media('>=tablet') {
+		padding: 47px 0 33px;
+	}
+
+	@include media('<desktop') {
+		border-bottom: 2px solid $light-gray;
+	}
+}

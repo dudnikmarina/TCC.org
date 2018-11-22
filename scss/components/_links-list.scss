@@ -1,0 +1,55 @@
+/* links-list */
+.links-list {
+	@extend %listreset;
+	font-size: 20px;
+
+	.text-sm {
+		font-size: 16px;
+		margin: 0 0 2px;
+	}
+
+	&.links-list-lg {
+		li {
+			margin: 0 0 15px;
+
+			@include media('>=tablet') {
+				margin: 0 0 28px;
+			}
+		}
+	}
+
+	.link-arrow {
+		&.link-arrow-md {
+			@include media('<tablet') {
+				font-size: 14px;
+			}
+
+			&:after {
+
+				@include media('<tablet') {
+					font-size: 16px;
+					bottom: 1px;
+				}
+			}
+		}
+	}
+
+	li {
+		margin: 0 0 5px;
+
+		@include media('>=tablet') {
+			margin: 0 0 9px;
+		}
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+		margin: 0;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+}

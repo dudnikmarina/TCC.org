@@ -1,0 +1,92 @@
+/* filters blok style */
+.filters-block {
+	padding: 0 0 35px;
+
+	@include media('>=tablet') {
+		padding: 0 0 70px;
+	}
+
+	.form-group {
+		padding: 0 13px 15px;
+
+		@include media('>=tablet') {
+			padding: 0 15px 10px;
+		}
+	}
+
+	label {
+		position: relative;
+		font-weight: 700;
+
+		&:after {
+			@include animate(opacity);
+			position: absolute;
+			content: '';
+			height: 2px;
+			left: 0;
+			right: 0;
+			bottom: -5px;
+			background: lighten($secondary, 12.5%);
+			opacity: 0;
+		}
+
+		&:hover {
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+
+	input:checked + label {
+		&:after {
+			opacity: 1;
+		}
+	}
+}
+
+/* main filters stule */
+.main-filters,
+.secondary-filters {
+	font-weight: 700;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -13px 15px;
+
+	@include media('>=tablet') {
+		margin: 0 -15px 25px;
+	}
+}
+
+.main-filters {
+	font-size: 22px;
+
+	@include media('>=tablet') {
+		font-size: 28px;
+	}
+}
+
+.secondary-filters {
+	.form-group {
+		@include media('<tablet') {
+			padding-bottom: 6px;
+		}
+	}
+}
+
+.filters-block [type="radio"],
+.filters-block [type="checkbox"]{
+	position:fixed;
+	left:0;
+	top:0;
+	opacity:0;
+	z-index: -1;
+}
+
+.posts-list {
+	@include animate(opacity transform);
+}
+
+.new-item {
+	opacity: 0;
+	transform: translateY(25px);
+}

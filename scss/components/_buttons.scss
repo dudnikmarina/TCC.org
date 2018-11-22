@@ -1,0 +1,126 @@
+/* buttons */
+.btn {
+	@include animate(color background border opacity);
+	display: inline-block;
+	vertical-align: top;
+	font-size: $btn-font-size;
+	font-weight: 600;
+	color: $white;
+	padding: $btn-padding;
+	margin: 0 0 1.1rem;
+	background: $btn-background;
+	text-decoration: none;
+	border: 1px solid $secondary;
+	border-radius: 30px;
+
+	&:hover {
+		color: $secondary;
+		background: darken($gray, 12%);
+		border-color: darken($gray, 12%);
+	}
+
+	&.btn-lg {
+		padding: 11px 51px;
+
+		@include media('>=tablet') {
+			padding: 14px 65px;
+		}
+	}
+
+	&.btn-md {
+		padding: 10px 20px;
+
+		&.btn-arrow {
+			padding-right: 45px;
+
+			&:after {
+				font-size: 20px;
+				right: 20px;
+			}
+		}
+	}
+
+	&.btn-outline {
+		color: $secondary;
+		background: $white;
+		border-color: $white;
+
+		&:hover {
+			color: $white;
+			background: $secondary;
+		}
+	}
+
+	&.btn-arrow {
+		color: $white;
+		position: relative;
+		padding-right: 29px;
+
+		&:hover {
+			color: $secondary;
+		}
+
+		&:after {
+			@include icon-icomoon($font-size: 15px);
+			@include center-content-v;
+			right: 13px;
+			font-weight: normal;
+
+			@include media('>=tablet') {
+				right: 10px;
+			}
+		}
+	}
+}
+
+/* link-arrow */
+.link-arrow {
+	position: relative;
+	display: inline-block;
+
+	vertical-align: top;
+	font-weight: 600;
+	color: $black;
+	margin: 0 0 10px;
+	text-decoration: none;
+
+	&.link-arrow-lg {
+		font-size: 28px;
+
+		&:after {
+			color: inherit;
+			font-size: 24px;
+			bottom: 5px;
+		}
+	}
+
+	&.link-arrow-md {
+		font-size: 16px;
+
+		@include media('>=tablet') {
+			font-size: 20px;
+		}
+
+		&:after {
+			color: inherit;
+			font-size: 18px;
+			bottom: 2px;
+
+			@include media('>=tablet') {
+				font-size: 22px;
+			}
+		}
+	}
+
+	&:after {
+		@include icon-icomoon($content: "\e906", $font-size: 20px);
+		position: absolute;
+		right: auto;
+		bottom: 0;
+		color: $primary;
+	}
+
+	&:hover {
+		color: $primary;
+	}
+}

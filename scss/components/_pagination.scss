@@ -1,0 +1,66 @@
+/* pagination style */
+.pagination {
+	@include animate(opacity transform);
+	@extend %listreset;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 18px;
+	font-weight: 600;
+	margin: 0 -15px 30px;
+
+	@include media('>=tablet') {
+		font-size: 24px;
+		margin: 0 -15px 15px;
+	}
+
+	li {
+		margin: 0 15px;
+	}
+
+	.page-previous,
+	.page-next {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		text-decoration: none;
+
+		&:after {
+			@include icon-icomoon($font-size: 22px);
+			position: absolute;
+			top: 2px;
+
+			@include media('>=tablet') {
+				top: 8px;
+			}
+		}
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	.page-next {
+		padding: 0 25px 0 0;
+
+		&:after {
+			right: 0;
+		}
+	}
+
+	.page-previous {
+		padding: 0 0 0 25px;
+
+		&:after {
+			@include icon-icomoon($content: "\e905", $font-size: 22px);
+			left: 0;
+		}
+	}
+
+	.disabled {
+		a {
+			color: #abbccf;
+			pointer-events: none;
+		}
+	}
+}

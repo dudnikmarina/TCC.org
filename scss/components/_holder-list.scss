@@ -1,0 +1,31 @@
+/* list style */
+.holder-list {
+	ul {
+	@extend %listreset;
+		color: $black;
+		letter-spacing: -.5px;
+		margin: 0 0 58px;
+		list-style-position: inside;
+		padding: 0;
+
+		@include media('>=tablet') {
+			margin: 0 0 65px;
+		}
+	}
+
+	li {
+		position: relative;
+		padding: 0 0 2px 15px;
+
+		&:after {
+			position: absolute;
+			content: '';
+			top: 10px;
+			left: 0;
+			width: 4px;
+			height: 4px;
+			background: #222;
+			border-radius: 50%;
+		}
+	}
+}

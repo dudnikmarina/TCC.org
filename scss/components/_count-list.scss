@@ -1,0 +1,19 @@
+/* count list style */
+.count-list {
+	@extend %listreset;
+	counter-reset: num;
+
+	@include media('<tablet') {
+		padding: 0 0 0 15px;
+		line-height: 1.62;
+	}
+
+	li {
+		margin: 0 0 5px;
+
+		&:before {
+			content: counter(num) '. ';
+			counter-increment: num;
+		}
+	}
+}

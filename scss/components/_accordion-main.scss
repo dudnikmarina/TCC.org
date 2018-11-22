@@ -1,0 +1,141 @@
+/* accordion main style */
+.accordion-main {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+
+	@include media('<xs-tablet') {
+		flex-wrap: wrap;
+	}
+
+	@include media('>=xs-tablet') {
+		font-size: 16px;
+	}
+
+	@include media('>=tablet') {
+		font-size: 20px;
+	}
+
+	&.hovered {
+		.accordion-item:not(.hover) {
+
+			.accordion-holder {
+				opacity: 0;
+				visibility: visible;
+
+
+			}
+		}
+
+		.accordion-item {
+			display: flex;
+			flex-direction: column;
+
+			&.hover {
+				@include media('>=xs-tablet') {
+					width: 75%;
+				}
+			}
+		}
+	}
+
+	h2 {
+		@include media('<xs-tablet') {
+			font-size: 18px;
+		}
+	}
+
+	.title-holder {
+		@include animate(shadow);
+		max-width: 200px;
+		letter-spacing: -0.6px;
+		text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+	}
+}
+
+.accordion-item {
+	@include bg-styles;
+	@include animate(color width);
+	width: 50%;
+	background-size: auto 100%;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	z-index: 1;
+
+	@include media('>=xs-tablet') {
+		width: 25%;
+	}
+
+	&.hover {
+		color: $white;
+
+		&:after {
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		.text-holder {
+			opacity: 1;
+			visibility: visible;
+
+		}
+
+		.accordion-holder {
+			@include media('>=xs-tablet') {
+				padding: 25px 30px;
+			}
+
+			@include media('>=desktop') {
+				padding: 25px 70px;
+			}
+		}
+
+		.title-holder {
+			text-shadow: none;
+		}
+	}
+
+	&:after {
+		@include animate(background);
+		position: absolute;
+		content: '';
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: -1;
+	}
+
+	.text-holder {
+		@include animate(opacity visibility);
+		color: $white;
+		opacity: 0;
+		visibility: hidden;
+
+		@include media('>=xs-tablet') {
+			width: calc(100vw / 2 - 60px);
+		}
+
+		@include media('>=desktop') {
+			width: calc(100vw / 2 - 140px);
+		}
+
+		@include media('>=1024px') {
+			width: calc(1024px / 2 - 140px);
+		}
+	}
+}
+
+.accordion-holder {
+	@include animate(opacity visibility padding);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 305px;
+	padding: 35px 15px;
+
+	@include media('>=xs-tablet') {
+		min-height: 460px;
+		padding: 25px 15px;
+	}
+}

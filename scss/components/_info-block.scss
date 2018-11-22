@@ -1,0 +1,46 @@
+/* info block style */
+.info-block {
+	line-height: 1.45;
+}
+
+.info-holder {
+	padding:0 0 15px;
+	border-bottom: 2px solid $light-gray;
+
+	@include media('<tablet') {
+		line-height: 1.5;
+	}
+
+	@include media('>=tablet') {
+		display: flex;
+		margin: 0 -15px;
+	}
+
+	.info-item {
+		border-top: 2px solid $light-gray;
+		padding: 30px 0 0;
+
+		@include media('>=tablet') {
+			margin: 0 15px;
+			width: calc(33% - 15px);
+		}
+
+		&:first-child {
+			@include media('<tablet') {
+				border-color: $primary;
+			}
+		}
+
+		&:only-child {
+			@include media('>=tablet') {
+				width: calc(100% - 15px);
+			}
+		}
+	}
+}
+
+.title-info {
+	min-height: 130px;
+	letter-spacing: -0.8px;
+	margin: 0 0 1.4rem;
+}

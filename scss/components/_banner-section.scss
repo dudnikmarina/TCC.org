@@ -1,0 +1,45 @@
+/* banner section styles*/
+.banner-section {
+	@include bg-styles;
+	line-height: 1.25;
+	padding: 28px 0 40px;
+
+	@include media('>=phone') {
+		padding: 40px 0 75px;
+	}
+
+	@include media('>=tablet') {
+		padding: 65px 0 100px;
+		line-height: 1.6;
+	}
+
+	h1 {
+		color: inherit;
+		margin: 0 0 22px;
+
+		@include media('>=tablet') {
+			font-size: 34px;
+			margin: 0 0 10px;
+		}
+	}
+
+	.links-list {
+		@extend %listreset;
+		font-size: 20px;
+
+		li {
+			margin: 0 0 15px;
+
+			@include media('>=tablet') {
+				margin: 0;
+			}
+		}
+	}
+}
+
+/* banner text styles */
+.banner-text {
+	text-align: center;
+	max-width: 560px;
+	margin: 0 auto;
+}
